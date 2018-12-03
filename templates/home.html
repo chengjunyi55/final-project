@@ -1,12 +1,25 @@
 {%  extends "layout.html" %}
  {%  block title %}Home{%  endblock %}
  {%  block content %}
-  <h1>Home</h1>
-  <p>This website will ask you a series of questions, and then tell you what your answers were.  This is kind of silly, but it illustrates the idea of a "session" in a webapp&mdash;the thing that allows you to "remember" a user's answers from one page to another.</p>
-  <ul>
-    <li><a href="/ctof">Convert Celsius to Fahrenheit</a></li>
-    <li><a href="/ftoc">Convert Fahrenheit to Celsius</a></li>
-    <li><a href="/mtokm">Convert Miles to Kilometers</a></li>
-    <li><a href="page1">Get started</a></li>
-  </ul>
+    <h1>Home</h1>
+    <p>Please enter your GPA and GRE scores below, and this app will tell you which tier of grad schools are you likely to get into.</p>
+    <form method="get">
+        GPA:<br>
+        <input type="number" name="gpa">
+        <br>
+        GRE- Verbal:<br>
+        <input type="number" name="v">
+        <br>
+        GRE- Quntitative:<br>
+        <input type="number" name="q">
+        <br>
+        GRE- Writing:<br>
+        <input type="number" name="w">
+        <br>
+        GRE- Physics:<br>
+        <input type="number" name="p">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <p>After submitting your scores, you will be directed to a new page to view your results.</p>
  {%  endblock %}
