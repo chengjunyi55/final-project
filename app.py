@@ -18,8 +18,10 @@ def render_result():
         xx5=[p/990]
         data=np.array([xx1,xx2,xx3,xx4,xx5]).transpose()
         train("accepted")
+        result1=float("accepted"[0][0])
         train("rejected")
-        return render_template("result.html")
+        result2=float("rejected"[0][0])
+        return render_template("result.html", result1, result2)
     expect ValueError:
         return "Only valid numbers can be accepted. Please try again."
 
