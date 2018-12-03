@@ -17,7 +17,7 @@ from tensorflow.python.keras.models import Model, Sequential
 from tensorflow.python.keras.layers import Input, Dense
 from tensorflow.python.keras.callbacks import Callback, EarlyStopping
 
-def train(name):
+def train(name, data):
     x1=[]
     x2=[]
     x3=[]
@@ -46,4 +46,5 @@ def train(name):
     model=Model(inputs, output)
     model.compile(optimizer='sgd', loss='mae', metrics=["mae"])
     history=model.fit(dat_train, y1_train, epochs=100, verbose=0)
-    return name=model.predict(data, verbose=1)
+    result=model.predict(data, verbose=1)
+    return result
