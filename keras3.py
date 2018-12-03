@@ -17,13 +17,6 @@ from tensorflow.python.keras.models import Model, Sequential
 from tensorflow.python.keras.layers import Input, Dense
 from tensorflow.python.keras.callbacks import Callback, EarlyStopping
 
-xx1=[4.0/4.00, 3.5/4.00]
-xx2=[170/170, 150/170]
-xx3=[170/170, 150/170]
-xx4=[6.0/6.0, 4.5/6.0]
-xx5=[990/990, 900/990]
-data=np.array([xx1,xx2,xx3,xx4,xx5]).transpose()
-
 def train(name):
     x1=[]
     x2=[]
@@ -53,8 +46,7 @@ def train(name):
     model=Model(inputs, output)
     model.compile(optimizer='sgd', loss='mae', metrics=["mae"])
     history=model.fit(dat_train, y1_train, epochs=100, verbose=0)
-    name=model.predict(data, verbose=1)
-    print(name)
+    return name=model.predict(data, verbose=1)
 
 if __name__=="__main__":
     train("accepted")
