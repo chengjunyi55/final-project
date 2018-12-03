@@ -7,5 +7,9 @@ app = Flask(__name__)
 def render_main():
     return render_template("home.html")
 
+@app.route("/result")
+def render_result():
+    return render_template("result.html")
+
 if __name__ == "__main__":
     app.run(debug=True, port=9999)
