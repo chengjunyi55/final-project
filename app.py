@@ -10,7 +10,18 @@ def render_main():
 
 @app.route("/result")
 def render_result():
-    return render_template("result.html")
+    try:
+        xx1=[gpa/4.00]
+        xx2=[v/170]
+        xx3=[q/170]
+        xx4=[w/6.0]
+        xx5=[p/990]
+        data=np.array([xx1,xx2,xx3,xx4,xx5]).transpose()
+        train("accepted")
+        train("rejected")
+        return render_template("result.html")
+    expect ValueError:
+        return "Only valid numbers can be accepted. Please try again."
 
 if __name__ == "__main__":
     app.run(debug=True, port=9999)
