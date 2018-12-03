@@ -1,30 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sample Web Page</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('final-project', filename='site.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title> {% block title %}{% endblock %} - My Webpage</title>
   </head>
   <body>
-    <h1>Home</h1>
-    <p>Please enter your GPA and GRE scores below, and this app will tell you which tier of grad schools are you likely to get into.</p>
-    <form method="get">
-        GPA:<br>
-        <input type="number" name="gpa">
-        <br>
-        GRE- Verbal:<br>
-        <input type="number" name="v">
-        <br>
-        GRE- Quntitative:<br>
-        <input type="number" name="q">
-        <br>
-        GRE- Writing:<br>
-        <input type="number" name="w">
-        <br>
-        GRE- Physics:<br>
-        <input type="number" name="p">
-        <br><br>
-        <input type="submit" value="Submit">
-    </form>
-    <p>After submitting your scores, you will be directed to a new page to view your results.</p>
+    <div id="content">{% block content %}{% endblock %}</div>
   </body>
 </html>
