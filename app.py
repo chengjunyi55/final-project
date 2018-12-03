@@ -11,20 +11,18 @@ def render_main():
 
 @app.route("/result")
 def render_result():
-    #try:
+    try:
         xx1=np.array([float(request.args["gpa"])/4.00])
         xx2=np.array([float(request.args["v"])/170])
-        xx3=np.array([float(float(request.args["q"]))/170])
-        w=float(request.args["w"])
-        xx4=np.array([float(w)/6.0])
-        p=float(request.args["p"])
-        xx5=np.array([float(p)/990])
+        xx3=np.array([float(request.args["q"])/170])
+        xx4=np.array([float(request.args["w"])/6.0])
+        xx5=np.array([float(request.args["p"])/990])
         data=np.array([xx1,xx2,xx3,xx4,xx5]).transpose()
         result1=train("accepted", data)
         result2=train("rejected", data)
         return render_template("result.html", result1=result1, result2=result2)
-    #except ValueError:
-        #return "Only valid numbers can be accepted. Please try again."
+    except ValueError:
+        return "Only valid numbers can be accepted. Please try again."
 
 if __name__ == "__main__":
     app.run(debug=True, port=9999)
