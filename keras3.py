@@ -56,5 +56,6 @@ def train(name):
     name=model.predict(data, verbose=1)
     print(name)
 
-train("accepted")
-train("rejected")
+if __name__=="__main__":
+    train("accepted")
+    train("rejected")
