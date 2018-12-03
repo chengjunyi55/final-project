@@ -46,5 +46,13 @@ def train(name, data):
     model=Model(inputs, output)
     model.compile(optimizer='sgd', loss='mae', metrics=["mae"])
     history=model.fit(dat_train, y1_train, epochs=100, verbose=0)
-    result=model.predict(data, verbose=1)
-    return result
+    result=round(float(model.predict(data, verbose=1)))
+
+    with open("ranking.json", "r") as rank:
+        rank_dic=json.load(rank)
+    schools=[]
+    for key in list(rank_dic.keys()):       
+        rank=int(key.split("-")[0])
+        if result+rank<=102 and result+rank>=98:
+            schools.append(rank_dic.get(key)[0])
+    return schools
