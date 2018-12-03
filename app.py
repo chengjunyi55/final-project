@@ -22,7 +22,7 @@ def render_result():
         train("rejected")
         result2=float("rejected"[0][0])
         return render_template("result.html", result1, result2)
-    expect ValueError:
+    except ValueError:
         return "Only valid numbers can be accepted. Please try again."
 
 if __name__ == "__main__":
