@@ -47,7 +47,3 @@ def train(name):
     model.compile(optimizer='sgd', loss='mae', metrics=["mae"])
     history=model.fit(dat_train, y1_train, epochs=100, verbose=0)
     return name=model.predict(data, verbose=1)
-
-if __name__=="__main__":
-    train("accepted")
-    train("rejected")
