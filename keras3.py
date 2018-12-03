@@ -53,6 +53,8 @@ def train(name, data):
     schools=[]
     for key in list(rank_dic.keys()):       
         rank=int(key.split("-")[0])
-        if result+rank<=102 and result+rank>=98:
+        if result+rank==100:
+            schools.append(rank_dic.get(key)[0])
+        elif result+rank>100 and len(schools)<5:
             schools.append(rank_dic.get(key)[0])
     return schools
