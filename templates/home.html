@@ -1,23 +1,23 @@
 {%  extends "layout.html" %}
  {%  block title %}Home{%  endblock %}
  {%  block content %}
-    <h1>Home</h1>
+    <h1><a href="/">Home</a></h1>
     <p>Please enter your GPA and GRE scores below, and this app will tell you which tier of grad schools you are likely to get into.</p>
     <form action="/result">
-        GPA: (Please enter a number between 0 and 4.00)<br>
+        GPA: (Please enter a number between 2.00 and 4.00)<br>
         <input type="text" name="gpa">
         <br>
-        GRE- Verbal: (Please enter a number between 130 and 170)<br>
-        <input type="text" name="v">
+        GRE- Verbal: (Please enter an integer between 130 and 170)<br>
+        <input type="number" name="v">
         <br>
-        GRE- Quntitative: (Please enter a number between 130 and 170)<br>
-        <input type="text" name="q">
+        GRE- Quntitative: (Please enter an integer between 130 and 170)<br>
+        <input type="number" name="q">
         <br>
-        GRE- Writing: (Please enter a number between 0 and 6)<br>
+        GRE- Writing: (Please enter a number between 0 and 6.0)<br>
         <input type="text" name="w">
         <br>
-        GRE- Physics: (Please enter a number between 200 and 990)<br>
-        <input type="text" name="p">
+        GRE- Physics: (Please enter an integer between 200 and 990)<br>
+        <input type="number" name="p">
         <br><br>
         <input type="submit" value="Submit">
     </form>
